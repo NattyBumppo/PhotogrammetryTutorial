@@ -4,7 +4,7 @@ Photogrammetry is a technique that allows you to take 2D photos and extract 3D d
 
 ![Mars 3D terrain example](mars_example.png)
 
-Our pipeline uses Curiosity navcam data and uses some other prior data as well, so it's not entirely based on 2D image data--but it's possible to get great results with just 2D data as well.
+Our pipeline uses Curiosity navcam data and uses some other prior data as well, so it's not entirely based on 2D image data, but it's possible to get great results with just 2D data as well.
 
 ## Needed Tools
 
@@ -104,7 +104,7 @@ Here's a sample model that I got using the **HD_movie_500kbps_straight.mp4** vid
 
 - Use high-resolution data from non-blurry cameras. Exclude any bad or overexposed photos from the data set.
 - Overlapping images are key. If images don't share overlapping points, there's no way to align them all together.
-- Similar to stereo vision, the depth of objects is obtained from their parallax in images--in other words, how much feature points move from image to image. This is why it's important to translate the camera relative to the scene. If all of the images are taken from a singular turn-in-place, they won't be moving relative to each other, and there won't be any parallax.
+- Similar to stereo vision, the depth of objects is obtained from their parallax in images. In other words, what's important is the correspondence of feature points from image to image. This is why it's important to translate the camera relative to the scene. If all of the images are taken from a singular turn-in-place, they won't be moving relative to each other, and there won't be any parallax.
 - The best results will be obtained from translating the camera orthogonally to the scene. A straight forward drive from the front camera will look bad, because you won't see parallax and most scenes are mostly identical.
 - In general, the more photos, the better. But aligning a large number of photos will take a long time.
 - With PhotoScan, it's a good idea to first try to build a low-quality point cloud and mesh. This lets you see if your results will be at all good--you can then take the time to build a high-quality mesh when you're sure.
