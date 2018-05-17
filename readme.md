@@ -91,10 +91,10 @@ Look the Model tab and you'll see a visualization of your sparse point cloud, al
 
 At this point, you've done most of the hard work: getting a good sparse point cloud is the most difficult task. Your next steps to building a mesh are:
 
-1) Go to *Workflow -> Build Dense Cloud* to make a more dense point cloud using the rest of the pixel data. At this point, you may want to remove some extraneous points using the "" tools if they look visibly wrong to you.
-2) Go to *Workflow -> Build Mesh* to generate a 3D mesh.
-3) Go to *Workflow -> Build Texture* to generate a high-resolution texture for the mesh. (This will make it look much better.)
-4) Finally, export the model to a format that you can load in other applications (e.g., Unity, MeshLab, MATLAB, etc.) using *File -> Export Model*.
+1. Go to *Workflow -> Build Dense Cloud* to make a more dense point cloud using the rest of the pixel data. At this point, you may want to remove some extraneous points using the "" tools if they look visibly wrong to you.
+2. Go to *Workflow -> Build Mesh* to generate a 3D mesh.
+3. Go to *Workflow -> Build Texture* to generate a high-resolution texture for the mesh. (This will make it look much better.)
+4. Finally, export the model to a format that you can load in other applications (e.g., Unity, MeshLab, MATLAB, etc.) using *File -> Export Model*.
 
 Here's a sample model that I got using the **HD_movie_500kbps_straight.mp4** video:
 
