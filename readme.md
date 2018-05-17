@@ -48,11 +48,11 @@ You can use these tools to make a mask on an image. Hold CTRL while using tools 
 
 ![Masked Sky](masked_sky.png)
 
-When you go to align photos, there will be two types of masking "tie point" masking and "key point" masking.
+When you go to align photos, there will be two types of masking: "tie point" masking and "key point" masking.
 
-"Key Point" masking means that any key points found in a given image's masked area will be excluded.
+"Key Point" masking means that any key points (i.e., features) found in a given image's masked area will be excluded.
 
-"Tie Points" means that any key points (i.e., features) that *match* with points in the masked areas will be excluded. This *theoretically* means that you can mask out objects in a single image and they'll be ignored in every single image, but in practice, this often doesn't work. The best way to generate masks would probably be some Python image processing scripts; you can then load the masks in bulk via *File -> Import -> Import Masks*.
+"Tie Points" means that any key points that *match* with points in the masked areas will be excluded. This *theoretically* means that you can mask out objects in a single image and they'll be ignored in every single image, but in practice, this often doesn't work. The best way to generate masks would probably be some Python image processing scripts (e.g., looking for sky-like colors and masking them out). You can then load the masks in bulk via *File -> Import -> Import Masks*.
 
 A manual workaround from a "rover side camera" data set would look like this:
 
@@ -83,15 +83,15 @@ After processing completes, take a look at the photo list in your workspace. Som
 
 ![Rover with Key and Tie Points](rover_with_key_and_tie_points.png)
 
-If there aren't any tie points for a photo, it won't be possible to match it to any photos. If you have photos with lots of tie points that are still remaining in the "NA" state, go back to the Align Photos set, increase the Key Point limit and Tie Point limit, and try again.
+If there aren't any tie points for a photo, it wasn't possible to match it to any other photos. If you have photos with lots of tie points that are still remaining in the "NA" state, go back to the Align Photos set, increase the Key Point limit and Tie Point limit, and try again.
 
-Look the Model tab and you'll see a visualization of your sparse point cloud, along with each of your the cameras. Visually confirm that it looks accurate before proceeding.
+Look the Model tab and you'll see a visualization of your sparse point cloud, along with each of the cameras. Visually confirm that it looks accurate (and that each photo camera is positioned where you expect it be) before proceeding.
 
 ## Next Steps
 
 At this point, you've done most of the hard work: getting a good sparse point cloud is the most difficult task. Your next steps to building a mesh are:
 
-1. Go to *Workflow -> Build Dense Cloud* to make a more dense point cloud using the rest of the pixel data. At this point, you may want to remove some extraneous points using the "" tools if they look visibly wrong to you.
+1. Go to *Workflow -> Build Dense Cloud* to make a more dense point cloud using the rest of the pixel data. At this point, you may want to remove some extraneous points using the point selection tools if they look visibly wrong to you.
 2. Go to *Workflow -> Build Mesh* to generate a 3D mesh.
 3. Go to *Workflow -> Build Texture* to generate a high-resolution texture for the mesh. (This will make it look much better.)
 4. Finally, export the model to a format that you can load in other applications (e.g., Unity, MeshLab, MATLAB, etc.) using *File -> Export Model*.
@@ -104,8 +104,8 @@ Here's a sample model that I got using the **HD_movie_500kbps_straight.mp4** vid
 
 - Use high-resolution data from non-blurry cameras. Exclude any bad or overexposed photos from the data set.
 - Overlapping images are key. If images don't share overlapping points, there's no way to align them all together.
-- Similar to stereo vision, the depth of objects is obtained from their parallax in images. In other words, what's important is the correspondence of feature points from image to image. This is why it's important to translate the camera relative to the scene. If all of the images are taken from a singular turn-in-place, they won't be moving relative to each other, and there won't be any parallax.
-- The best results will be obtained from translating the camera orthogonally to the scene. A straight forward drive from the front camera will look bad, because you won't see parallax and most scenes are mostly identical.
+- Similar to stereo vision, the depth of objects is obtained from their parallax in images. In other words, what's important is the correspondence of feature points from image to image. This is why it's important to *translate* the camera relative to the scene. If all of the images are taken from a single turn-in-place, the features won't be moving relative to each other, and there won't be any parallax.
+- The best results will be obtained from translating the camera orthogonally to the scene. A straight forward drive imaged from the front camera will produce bad results, because you won't see any parallax and photos will be mostly identical.
 - In general, the more photos, the better. But aligning a large number of photos will take a long time.
 - With PhotoScan, it's a good idea to first try to build a low-quality point cloud and mesh. This lets you see if your results will be at all good--you can then take the time to build a high-quality mesh when you're sure.
 - If you have estimates of rover location, you can use this data to inform how the images are aligned. This is very useful; see [this page](http://www.agisoft.com/index.php?id=31) for details.
