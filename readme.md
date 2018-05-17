@@ -98,7 +98,7 @@ At this point, you've done most of the hard work: getting a good sparse point cl
 
 Here's a sample model that I got using the **HD_movie_500kbps_straight.mp4** video:
 
-
+<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/7be0e5bfb8fd49f9a0e0216538004cba/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/models/7be0e5bfb8fd49f9a0e0216538004cba?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">ローバーによる地形動画からの測量法実験</a> by <a href="https://sketchfab.com/nattybumppo?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">nattybumppo</a> on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a> </p> </div>
 
 ## Tips for Better Photogrammetric Reconstructions
 
